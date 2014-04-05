@@ -1,0 +1,12 @@
+{
+  "/Users/xinghu/Documents/LeetCode/LeetCode/src": {
+    "location": "/Users/xinghu/Documents/LeetCode/LeetCode/src",
+    "status": "UNRESOLVED",
+    "error": "No class path info available for \u0027/Users/xinghu/Documents/LeetCode/LeetCode/src\u0027. Skipped."
+  },
+  "/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Classes/classes.jar": {
+    "coordinate": "jre:jre:zip:call:1.0.0",
+    "location": "/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Classes/classes.jar",
+    "status": "RESOLVED"
+  }
+}
