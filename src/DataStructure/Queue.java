@@ -96,6 +96,7 @@ class Queue<T> implements Iterable<T> {
 		Node next;
 		public Node(T item) {
 			this.item = item;
+			next = null;
 		}
 	}
 	private class MyQueueIterator implements Iterator<T> {
