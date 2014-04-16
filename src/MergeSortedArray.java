@@ -29,23 +29,15 @@ public class MergeSortedArray {
 		int i = 0, j = 0;
 		while ((i < m) || (j < n))
 		{
-			if (i == m) {
-				A[i + j] = B[j];
-				j ++;
-			}
-			else if (j == n) {
-				A[i + j] = C[i];
-				i ++;
-			}
-			else {
-				if (C[i] > B[j]) {
-					A[i + j] = B[j];
-					j ++;
-				}
+			if (i == m) 
+				A[i + j] = B[j ++];
+			else if (j == n) 
+				A[i + j] = C[i ++];
+			else
+				if (C[i] > B[j]) 
+					A[i + j] = B[j ++];
 				else {
-					A[i + j] = C[i];
-					i ++;
-				}
+					A[i + j] = C[i ++];
 			}
 		}
 	}
