@@ -7,7 +7,7 @@
  * @author xinghu
  *
  */
-public class RemoveDuplicatesSortedArray {
+public class RemoveDuplicatesSortedArrayII {
 
 	/**
 	 * @param args
