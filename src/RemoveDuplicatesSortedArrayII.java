@@ -9,7 +9,7 @@ import java.util.Map;
  * @author xinghu
  *
  */
-public class RemoveDuplicatesSortedArray {
+public class RemoveDuplicatesSortedArrayII {
 
 	/**
 	 * @param args
