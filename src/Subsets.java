@@ -6,34 +6,35 @@ import java.util.Arrays;
  */
 
 /**
- * @author xinghu
+ * @author Xinghu
  *
  */
-public class SubsetsII {
+public class Subsets {
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] num = {1, 2, 2};
-		System.out.println(subsetsWithDup(num));
+		int[] S = {1, 2, 3};
+		System.out.println(subsets(S));
 	}
 	
-	public static ArrayList<ArrayList<Integer>> subsetsWithDup(int[] num) {
+	public static ArrayList<ArrayList<Integer>> subsets(int[] S) {
 		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-		if (num.length == 0)
+		if (S.length == 0)
 			return result;
-		Arrays.sort(num);
-		int max = (int)Math.pow(2, num.length);
+		Arrays.sort(S);
+		int max = (int)Math.pow(2, S.length);
+		
 		for (int i = 0; i < max; i ++)
 		{
 			ArrayList<Integer> subset = new ArrayList<Integer>();
-			for (int j = 0; j < num.length; j ++)
+			
+			for (int j = 0; j < S.length; j ++)
 			{
-				if ((i & (int)Math.pow(2, j) ) > 0) {
-					subset.add(num[j]);
-				}
+				if (((1 << j) & i) > 0)
+					subset.add(S[j]);
 			}
 			if (!result.contains(subset))
 				result.add(subset);
