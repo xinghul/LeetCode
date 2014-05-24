@@ -15,7 +15,7 @@ public class PermutationsII {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] num = {-1, 2, -1, 2, 1, -1, 2, 1};
+		int[] num = {1, 1};
 		permuteUnique(num);
 		System.out.println(result);
 	}
@@ -32,13 +32,15 @@ public class PermutationsII {
 	private static void pick(int[] num, boolean[] picked, int index) {
 		if (index == num.length) {
 			ArrayList<Integer> tmp = (ArrayList<Integer>)solution.clone();
-			if (!result.contains(tmp))
-				result.add(tmp);
+			result.add(tmp);
 			return;
 		}
+		ArrayList<Integer> tried = new ArrayList<Integer>();
 		for (int i = 0; i < num.length; i ++)
 		{
-			if (!picked[i]) {
+			if (!picked[i] && !tried.contains(num[i])) {
+				tried.add(num[i]);
+				
 				solution.add(num[i]);
 				picked[i] = true;
 				pick(num, picked, index + 1);
