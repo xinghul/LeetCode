@@ -18,6 +18,8 @@ public class RedBlackTree<K extends Comparable<K>, V> {
 	}
 	
 	private TreeNode root, nil;
+	private static boolean RED = true;
+	private static boolean BLACK = false;
 	
 	public RedBlackTree() {
 		root = null;
@@ -82,6 +84,34 @@ public class RedBlackTree<K extends Comparable<K>, V> {
 			x.parent.right = x;
 		x.right = y;
 		y.parent = x;
-			
+	}
+	
+	public void Insert(TreeNode z) {
+		TreeNode y = nil;
+		TreeNode x = root;
+		
+		while (x != nil)
+		{
+			y = x;
+			if (z.key.compareTo(x.key) == -1)
+				x = x.left;
+			else
+				x = x.right;
+		}
+		z.parent = y;
+		if (y == nil)
+			root = z;
+		else if (z.key.compareTo(y.key) == -1)
+			y.left = z;
+		else
+			y.right = z;
+		z.left = nil;
+		z.right = nil;
+		z.color = RED;
+		InsertFixup(z);
+	}
+	
+	private void InsertFixup(TreeNode z) {
+		
 	}
 }
